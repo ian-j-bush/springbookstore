@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <th:block th:fragment="head(title)">
+        <meta charset="UTF-8">
+        <title th:text="${title} + ' | Spring Bookstore">Spring Bookstore</title>
+        <link rel="stylesheet" th:href="@{/style.css}"/>
+    </th:block>
 </head>
 <body>
+<header class="site-header" th:fragment="nav">
+    <div class="end-container">
 
+    </div>
+</header>
+<footer class="site-footer" th:fragment="footer">
+    <div class="end-container">
+
+    </div>
+</footer>
 </body>
 </html>

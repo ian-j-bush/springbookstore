@@ -1,0 +1,12 @@
+:root {
+    --color-primary: #0b6623;
+    --color-background: #e0c9a6;
+    --color-container: #420d09;
+    --color-nav-text: orange;
+}
+
+
+.end-container {
+    background-color: var(--color-primary);
+    color: var(--color-nav-text);
+}

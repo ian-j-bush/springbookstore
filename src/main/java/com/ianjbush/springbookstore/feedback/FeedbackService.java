@@ -3,6 +3,8 @@ package com.ianjbush.springbookstore.feedback;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+
 @Service
 public class FeedbackService {
 
@@ -14,6 +16,7 @@ public class FeedbackService {
 
     @Transactional
     public void saveFeedback(Feedback feedback ) {
+        feedback.setSubmissionDate(LocalDateTime.now());
         feedbackRepository.save(feedback);
     }
 }
