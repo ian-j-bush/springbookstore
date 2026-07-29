@@ -1,6 +1,7 @@
 package com.ianjbush.springbookstore.library;
 
 import com.ianjbush.springbookstore.shopping.OrderItem;
+import com.ianjbush.springbookstore.useraccount.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -44,4 +45,7 @@ public class Book {
 
     @OneToMany(mappedBy = "book")
     private List<OrderItem> orders;
+
+    @ManyToMany(mappedBy = "library")
+    private List<User> purchasingUsers;
 }
