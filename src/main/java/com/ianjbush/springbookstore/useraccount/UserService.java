@@ -22,6 +22,11 @@ public class UserService implements UserDetailsService {
 
     @Transactional
     public User registerUser(String username, String password, String emailAddress ) {
+        if (userRepository.usernameAlreadyRegistered(username)) {
+            throw new IllegalArgumentException("Username " + username + " is already registered.");
+        } if (userRepository.emailAddressAlreadyRegistered(emailAddress)) {
+            throw new IllegalArgumentException("Email Address " + username + " is already registered.");
+        }
 
         User user = new User();
         user.setUsername(username);
